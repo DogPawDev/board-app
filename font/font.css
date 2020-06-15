@@ -1,0 +1,14 @@
+@font-face{
+    font-family: "Nexon_Bold";
+    src:url("NEXON_Lv2_Gothic_Bold.woff");   
+}
+@font-face{
+    font-family: "Nexon";
+    src:url("NEXON_Lv2_Gothic.woff");   
+}
+html,body{
+     font-family: Nexon_Bold !important;
+}
+table{
+    font-family: Nexon !important;
+}
