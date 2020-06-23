@@ -92,4 +92,4 @@ for(let i=1;i<=PageViewMaxLimit;i++){
     });
 }
 
-Boader.createBoard();
+//Boader.createBoard();
