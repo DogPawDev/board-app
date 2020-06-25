@@ -28,7 +28,7 @@ $(document).ready(function(){
 
 
 //입력 form 생성
-$('#summernote').summernote({
+const editor = $('#summernote').summernote({
     placeholder: '입력 하시면 됩니다.',
     lang: 'ko-KR',
     tabsize: 2,
@@ -38,7 +38,16 @@ $('#summernote').summernote({
     maxHeight: null,             // set maximum height of editor
     focus: true,                  // set focus to editable area after initializing summernote
     callbacks: {
-       
+      onImageUpload: function(files ,editor, welEditable) {
+        // upload image to server and create imgNode...
+        console.log(files[0]);
+        console.log(typeof(files[0]));
+        uploadSummernoteImageFile(files[0],editor, welEditable);
+
+
+
+
+      }
     },
     toolbar:[
         ['style', ['style']],
@@ -105,8 +114,27 @@ $('#summernote').summernote({
      
    });  
 
+ function uploadSummernoteImageFile(file, editor ,welEditable) {
+		data = new FormData();
+		data.append("file", file);
+		$.ajax({
+      crossOrigin : true,
+			data : data,
+			type : "POST",
+			url : "http://127.0.0.1:8080/board/board/uploadSummernoteImageFile",
+			contentType : false,
+			processData : false,
+			success : function(data) {
+        console.log(data.url);
+            	//항상 업로드된 파일의 url이 있어야 한다.
+			
+        
+          
+    
+      }
+		});
+	}
   
-
 });
 
 

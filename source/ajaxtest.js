@@ -26,7 +26,7 @@ $.ajax({
 
 $.ajax({
     type : "GET",                               //1
-    url : "http://127.0.0.1:8080/board/3",                          //2
+    url : "http://127.0.0.1:8080/board/board/3",                          //2
     dataType : "json",                         //3      //
     success : function(responseData){
         console.log(responseData);

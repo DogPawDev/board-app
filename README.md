@@ -11,3 +11,5 @@
 5. 게시물 작성 시 이미지 업로드 개발 중 (썸머노트 스타일 미적용 오류 존재)
     base64 디코딩 및 File 객체 전달 필요
     참고 https://base64.guru/converter/decode/image
+
+5-1. base64 제외 로컬 스토리지 경로 전달 
